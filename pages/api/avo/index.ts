@@ -1,12 +1,12 @@
 import { IncomingMessage, ServerResponse } from 'http'
 import DB from '@database'
-// import enablePublicAccess from '@cors'
+import enablePublicAccess from '@cors'
 
 const allAvos = async (req: IncomingMessage, res: ServerResponse) => {
   try {
     // Generally, you would not want this in your apps.
     // See more in 'cors.js'
-    // await enablePublicAccess(req, res)
+    await enablePublicAccess(req, res)
 
     const db = new DB()
     const allEntries = await db.getAll()
