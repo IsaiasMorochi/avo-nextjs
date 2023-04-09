@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/Navbar/Navbar'
 
-const Home = () => {
+const HomePage = () => {
+
   const [productList, setProductList] = useState<TProduct[]>([])
   useEffect(() => {
     window.fetch('/api/avo')
@@ -13,7 +14,6 @@ const Home = () => {
 
   return (
     <div>
-      <Navbar />
       <p>
         Esta es la pagina de home
       </p>
@@ -24,4 +24,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomePage
